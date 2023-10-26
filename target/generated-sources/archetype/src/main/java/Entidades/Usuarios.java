@@ -10,7 +10,6 @@ public class Usuarios {
 	 //Atributos
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_usuario", unique=true, nullable=false)
     private long id_usuario;
 	@Column(name = "dni_usuario", nullable = false)
@@ -59,6 +58,7 @@ public class Usuarios {
         super();
         this.id_usuario = idUsuario;
         this.dni_usuario = dniUsuario;
+
         this.nombre_usuario = nombreUsuario;
         this.apellidos_usuario = apellidosUsuario;
         this.tlf_usuario = tlfUsuario;

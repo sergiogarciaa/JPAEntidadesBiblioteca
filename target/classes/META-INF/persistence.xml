@@ -7,17 +7,19 @@
 
         <class>Entidades.Acceso</class>
         <class>Entidades.Usuarios</class>
+        <class>Entidades.Autores</class>
+        <class>Entidades.Rel_Autores_Libros</class>
         <exclude-unlisted-classes/>
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/gestorBibliotecaPersonal"/>
             <property name="jakarta.persistence.jdbc.user" value="postgres"/>
-            <property name="jakarta.persistence.jdbc.password" value="#"/>
-            <property name="jakarta.persistence.schema-generation.database.action" value="create"/>
+            <property name="jakarta.persistence.jdbc.password" value="Mitobyy12."/>
+            <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
         </properties>
     </persistence-unit>
     <!-- none: No schema creation or deletion will take place.
-create: The provider will create the database artifacts on application deployment. The artifacts will remain unchanged after application redeployment.
-drop-and-create: Any artifacts in the database will be deleted, and the provider will create the database artifacts on deployment.
-drop: Any artifacts in the database will be deleted on application deployment. -->
+	create: The provider will create the database artifacts on application deployment. The artifacts will remain unchanged after application redeployment.
+	drop-and-create: Any artifacts in the database will be deleted, and the provider will create the database artifacts on deployment.
+	drop: Any artifacts in the database will be deleted on application deployment. -->
 </persistence>
