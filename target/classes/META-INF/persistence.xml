@@ -9,12 +9,18 @@
         <class>Entidades.Usuarios</class>
         <class>Entidades.Autores</class>
         <class>Entidades.Rel_Autores_Libros</class>
+        <class>Entidades.Libros</class>
+        <class>Entidades.Generos</class>
+        <class>Entidades.Colecciones</class>
+        <class>Entidades.Editoriales</class>
+        <class>Entidades.Prestamos</class>
+        <class>Entidades.EstadoPrestamos</class>
         <exclude-unlisted-classes/>
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/gestorBibliotecaPersonal"/>
             <property name="jakarta.persistence.jdbc.user" value="postgres"/>
-            <property name="jakarta.persistence.jdbc.password" value="Mitobyy12."/>
+            <property name="jakarta.persistence.jdbc.password" value="#"/>
             <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
         </properties>
     </persistence-unit>

@@ -20,7 +20,7 @@ public class Acceso {
 		@Column(name="descripcion_acceso")
 		private String descripcion_acceso;
 		
-	    @OneToMany(mappedBy="acceso")
+	    @OneToMany(mappedBy="acceso") 
 	    List<Usuarios> usuariosConAcceso;
 	    
 	    
