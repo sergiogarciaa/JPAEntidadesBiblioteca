@@ -9,6 +9,7 @@ public class Inicio {
 		InterfazPersistencia impPer = new ImplementacionPersistencia();
 
 		impPer.crearAccesos();
+		impPer.crearUsuarios();
 	}
 
 }

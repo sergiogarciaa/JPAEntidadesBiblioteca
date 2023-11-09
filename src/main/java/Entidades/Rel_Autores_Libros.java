@@ -23,6 +23,7 @@ public class Rel_Autores_Libros {
 		@JoinColumn(name = "id_autor", nullable=false) // FK
 		Autores autores;
 		
-		@Column(name="id_libro", nullable=false)
-		private int id_libro;
+		@ManyToOne
+		@JoinColumn(name = "id_libro", nullable=false) // FK
+		Libros libros;
 }

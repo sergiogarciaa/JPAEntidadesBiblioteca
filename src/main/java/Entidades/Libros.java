@@ -12,6 +12,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -44,7 +45,11 @@ public class Libros {
 	@JoinColumn(name = "id_coleccion") // FK
 	Colecciones colecciones;
 	
+	@OneToMany(mappedBy="libros") 
+	List<Rel_Autores_Libros> libroLibros;
 	
+	@Column(name = "cantidad_libro")
+    private Integer cantidad_libro;
 	
 	@ManyToMany
     @JoinTable(name = "libros_prestamos", schema = "gbp_operacional",
@@ -58,8 +63,11 @@ public class Libros {
 		super();
 	}
 
+
 	public Libros(long id_libro, String isbn_libro, String titulo_libro, String edicion_libro, Editoriales editoriales,
-			Generos generos, Colecciones colecciones) {
+			Generos generos, Colecciones colecciones, List<Rel_Autores_Libros> libroLibros, Integer cantidad_libro,
+			List<Prestamos> prestamos) {
+		super();
 		this.id_libro = id_libro;
 		this.isbn_libro = isbn_libro;
 		this.titulo_libro = titulo_libro;
@@ -67,7 +75,10 @@ public class Libros {
 		this.editoriales = editoriales;
 		this.generos = generos;
 		this.colecciones = colecciones;
-	}	
-	
+		this.libroLibros = libroLibros;
+		this.cantidad_libro = cantidad_libro;
+		this.prestamos = prestamos;
+	}
+
 
 }

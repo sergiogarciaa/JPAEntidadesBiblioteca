@@ -1,10 +1,13 @@
 package Entidades;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -21,13 +24,21 @@ public class EstadoPrestamos {
 	@Column(name = "descripcion_estado_prestamo")
     private String descripcion_estado_prestamo;
 
+	@OneToMany(mappedBy="estadosPrestamos") 
+    List<Prestamos> librosPrestados;
+	
 	public EstadoPrestamos() {
 		super();
 	}
 
-	public EstadoPrestamos(long id_estado_prestamo, String codigo_estado_prestamo, String descripcion_estado_prestamo) {
+	public EstadoPrestamos(long id_estado_prestamo, String codigo_estado_prestamo, String descripcion_estado_prestamo,
+			List<Prestamos> librosPrestados) {
+		super();
 		this.id_estado_prestamo = id_estado_prestamo;
 		this.codigo_estado_prestamo = codigo_estado_prestamo;
 		this.descripcion_estado_prestamo = descripcion_estado_prestamo;
+		this.librosPrestados = librosPrestados;
 	}
+
+
 }
